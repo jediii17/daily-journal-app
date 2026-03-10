@@ -50,6 +50,10 @@ class User extends Authenticatable
         ];
     }
 
+    /**
+     * Get the entries for the user.
+     *
+     */
     public function entries()
     {
         return $this->hasMany(Entry::class);

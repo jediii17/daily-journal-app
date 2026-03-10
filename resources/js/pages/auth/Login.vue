@@ -18,25 +18,12 @@ defineProps<{
 
     <Head title="Daily Journal Login" />
 
-    <div class="bg-background-light dark:bg-slate-950 font-display min-h-screen flex items-center justify-center p-4">
+    <div class="bg-background-light dark:bg-slate-950 font-display min-h-screen flex items-center justify-center p-6">
         <div
             class="w-full max-w-[400px] flex flex-col bg-white dark:bg-slate-900 rounded-xl shadow-xl overflow-hidden border border-slate-100 dark:border-slate-800">
-            <!-- Header back arrow -->
-            <div class="flex items-center bg-transparent p-4 pb-2 justify-between">
-                <Link href="/"
-                    class="text-slate-900 dark:text-slate-100 flex size-12 shrink-0 items-center justify-center cursor-pointer hover:bg-slate-100 dark:hover:bg-slate-800 rounded-full transition-colors">
-                    <ArrowLeft class="size-6" />
-                </Link>
-                <h2
-                    class="text-slate-900 dark:text-slate-100 text-lg font-bold leading-tight tracking-tight flex-1 text-center pr-12">
-                    Login</h2>
-            </div>
 
             <!-- Logo and titles -->
-            <div class="px-6 pt-4 flex flex-col items-center">
-                <div class="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mb-4">
-                    <BookOpen class="size-10 text-primary" />
-                </div>
+            <div class="px-6 pt-4 flex flex-col items-center py-4">
                 <h1
                     class="text-slate-900 dark:text-slate-100 text-2xl font-bold leading-tight tracking-tight mb-1 text-center">
                     My Journal</h1>
@@ -56,7 +43,7 @@ defineProps<{
                     <div class="relative">
                         <input id="email" name="email" required autofocus autocomplete="email"
                             class="form-input w-full rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-slate-100 focus:ring-primary focus:border-primary h-12 px-4 placeholder:text-slate-400 text-base font-normal transition-colors"
-                            placeholder="your@email.com" type="email" />
+                            placeholder="your@gmail.com" type="email" />
                     </div>
                     <InputError :message="errors.email" />
                 </div>
@@ -71,7 +58,7 @@ defineProps<{
                     </div>
                     <InputError :message="errors.password" />
                 </div>
-
+                <!-- 
                 <div class="flex items-center justify-between py-1">
                     <div class="flex items-center">
                         <input
@@ -84,7 +71,7 @@ defineProps<{
                         <Link v-if="canResetPassword" :href="request()"
                             class="font-medium text-primary hover:underline">Forgot password?</Link>
                     </div>
-                </div>
+                </div> -->
 
                 <button type="submit" :disabled="processing"
                     class="w-full bg-primary hover:bg-primary/90 text-white font-bold py-3.5 px-4 rounded-lg transition-colors flex items-center justify-center gap-2 mt-2 disabled:opacity-75">

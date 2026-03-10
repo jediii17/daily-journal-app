@@ -29,9 +29,6 @@ import { store } from '@/routes/register';
 
             <!-- Logo Section -->
             <div class="flex flex-col items-center mb-6 mt-2">
-                <div class="w-20 h-20 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
-                    <FileEdit class="size-12 text-primary" />
-                </div>
                 <h1 class="text-slate-900 dark:text-slate-100 text-2xl font-bold tracking-tight mb-1 text-center">My
                     Journal</h1>
                 <p class="text-slate-500 dark:text-slate-400 text-base mb-6 text-center">Create an account</p>
@@ -42,13 +39,13 @@ import { store } from '@/routes/register';
                 v-slot="{ errors, processing }" class="space-y-4">
                 <!-- Name Field -->
                 <div class="flex flex-col gap-1.5">
-                    <label for="name" class="text-slate-700 dark:text-slate-300 text-sm font-semibold px-1">Full
+                    <label for="name" class="text-slate-700 dark:text-slate-300 text-sm font-semibold px-1">
                         Name</label>
                     <div class="relative">
                         <User class="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 size-5" />
                         <input id="name" name="name" required autofocus autocomplete="name"
                             class="w-full pl-12 pr-4 py-3.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all placeholder:text-slate-400"
-                            placeholder="John Doe" type="text" />
+                            placeholder="Jedidia Lemuel" type="text" />
                     </div>
                     <InputError :message="errors.name" />
                 </div>
@@ -61,7 +58,7 @@ import { store } from '@/routes/register';
                         <Mail class="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 size-5" />
                         <input id="email" name="email" required autocomplete="email"
                             class="w-full pl-12 pr-4 py-3.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all placeholder:text-slate-400"
-                            placeholder="name@example.com" type="email" />
+                            placeholder="name@gmail.com" type="email" />
                     </div>
                     <InputError :message="errors.email" />
                 </div>
