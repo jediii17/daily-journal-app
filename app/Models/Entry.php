@@ -1,0 +1,24 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Model;
+
+class Entry extends Model
+{
+    protected $fillable = [
+        'user_id',
+        'title',
+        'date',
+        'body',
+    ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
+    protected $casts = [
+        'date' => 'date',
+    ];
+}
