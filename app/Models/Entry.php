@@ -13,19 +13,18 @@ class Entry extends Model
         'date',
         'body',
     ];
+
     protected $casts = [
         'date' => 'date',
     ];
 
     /**
      * Get the user that owns the entry.
-     *
      */
     public function user()
     {
         return $this->belongsTo(User::class);
     }
-
 
     public function scopeFilter(Builder $query, array $filters): void
     {

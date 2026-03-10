@@ -1,7 +1,7 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EntryController;
+use Illuminate\Support\Facades\Route;
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/dashboard', [EntryController::class, 'index'])->name('dashboard');
@@ -13,4 +13,4 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/entries/{entry}', [EntryController::class, 'show'])->name('entries.show');
 });
 
-require __DIR__ . '/settings.php';
+require __DIR__.'/settings.php';

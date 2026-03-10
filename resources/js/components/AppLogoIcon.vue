@@ -13,5 +13,5 @@ defineProps<Props>();
 </script>
 
 <template>
-    <img src="/logo.svg" alt="logo" class="w-6 h-6">
+    <img src="/logo.svg" alt="logo" class="h-6 w-6" />
 </template>

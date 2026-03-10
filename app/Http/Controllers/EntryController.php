@@ -67,6 +67,7 @@ class EntryController extends Controller
         } catch (\Exception $e) {
 
             DB::rollBack(); // Roll back the transaction if an error occurs
+
             return redirect()->back()->with(
                 'error',
                 'We couldn\'t save this entry just now. Please try again in a moment.'
@@ -122,6 +123,7 @@ class EntryController extends Controller
         } catch (\Exception $e) {
             DB::rollBack(); // Roll back the transaction if an error occurs
             $entry->update($validated);
+
             return redirect()->back()->with(
                 'error',
                 'We couldn\'t update this entry just now. Please try again in a moment.'
@@ -144,7 +146,7 @@ class EntryController extends Controller
 
         // Render the show view with the entry
         return Inertia::render('entries/Show', [
-            'entry' => $entry
+            'entry' => $entry,
         ]);
     }
 }

@@ -52,7 +52,6 @@ class User extends Authenticatable
 
     /**
      * Get the entries for the user.
-     *
      */
     public function entries()
     {
