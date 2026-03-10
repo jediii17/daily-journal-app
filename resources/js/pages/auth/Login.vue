@@ -18,16 +18,18 @@ defineProps<{
 
     <Head title="Daily Journal Login" />
 
-    <div class="bg-background-light dark:bg-slate-950 font-display min-h-screen flex items-center justify-center p-6">
+    <div class="bg-background-light dark:bg-neutral-950 font-display min-h-screen flex items-center justify-center p-6">
         <div
-            class="w-full max-w-[400px] flex flex-col bg-white dark:bg-slate-900 rounded-xl shadow-xl overflow-hidden border border-slate-100 dark:border-slate-800">
+            class="w-full max-w-[400px] flex flex-col bg-white dark:bg-neutral-900 rounded-xl shadow-xl overflow-hidden border border-neutral-100 dark:border-neutral-800">
 
             <!-- Logo and titles -->
             <div class="px-6 pt-4 flex flex-col items-center py-4">
                 <h1
-                    class="text-slate-900 dark:text-slate-100 text-2xl font-bold leading-tight tracking-tight mb-1 text-center">
+                    class="text-neutral-900 dark:text-neutral-100 text-2xl font-bold leading-tight tracking-tight mb-1 text-center">
                     My Journal</h1>
-                <p class="text-slate-500 dark:text-slate-400 text-base font-medium mb-8 text-center">Welcome back</p>
+                <p class="text-neutral-500 dark:text-neutral-400 text-base font-medium mb-8 text-center">
+                    Welcome back. Let’s pick up where you left off.
+                </p>
 
                 <div v-if="status" class="mb-4 text-center text-sm font-medium text-green-600">
                     {{ status }}
@@ -39,10 +41,10 @@ defineProps<{
                 class="px-6 pb-8 space-y-5">
                 <div class="flex flex-col gap-1.5">
                     <label for="email"
-                        class="text-slate-700 dark:text-slate-300 text-sm font-semibold px-1">Email</label>
+                        class="text-neutral-700 dark:text-neutral-300 text-sm font-semibold px-1">Email</label>
                     <div class="relative">
                         <input id="email" name="email" required autofocus autocomplete="email"
-                            class="form-input w-full rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-slate-100 focus:ring-primary focus:border-primary h-12 px-4 placeholder:text-slate-400 text-base font-normal transition-colors"
+                            class="form-input w-full rounded-lg border border-neutral-200 dark:border-neutral-700 bg-neutral-50 dark:bg-neutral-800 text-neutral-900 dark:text-neutral-100 focus:ring-neutral-900 focus:border-neutral-900 dark:focus:ring-neutral-100 dark:focus:border-neutral-100 h-12 px-4 placeholder:text-neutral-400 text-base font-normal transition-colors"
                             placeholder="your@gmail.com" type="email" />
                     </div>
                     <InputError :message="errors.email" />
@@ -50,10 +52,10 @@ defineProps<{
 
                 <div class="flex flex-col gap-1.5">
                     <label for="password"
-                        class="text-slate-700 dark:text-slate-300 text-sm font-semibold px-1">Password</label>
+                        class="text-neutral-700 dark:text-neutral-300 text-sm font-semibold px-1">Password</label>
                     <div class="relative">
                         <input id="password" name="password" required autocomplete="current-password"
-                            class="form-input w-full rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-slate-100 focus:ring-primary focus:border-primary h-12 px-4 placeholder:text-slate-400 text-base font-normal transition-colors"
+                            class="form-input w-full rounded-lg border border-neutral-200 dark:border-neutral-700 bg-neutral-50 dark:bg-neutral-800 text-neutral-900 dark:text-neutral-100 focus:ring-neutral-900 focus:border-neutral-900 dark:focus:ring-neutral-100 dark:focus:border-neutral-100 h-12 px-4 placeholder:text-neutral-400 text-base font-normal transition-colors"
                             placeholder="••••••••" type="password" />
                     </div>
                     <InputError :message="errors.password" />
@@ -62,9 +64,9 @@ defineProps<{
                 <div class="flex items-center justify-between py-1">
                     <div class="flex items-center">
                         <input
-                            class="h-4 w-4 rounded border-slate-300 text-primary focus:ring-primary bg-slate-50 dark:bg-slate-800 dark:border-slate-700"
+                            class="h-4 w-4 rounded border-neutral-300 text-primary focus:ring-primary bg-neutral-50 dark:bg-neutral-800 dark:border-neutral-700"
                             id="remember" name="remember" type="checkbox" />
-                        <label class="ml-2 block text-sm text-slate-600 dark:text-slate-400" for="remember">Remember
+                        <label class="ml-2 block text-sm text-neutral-600 dark:text-neutral-400" for="remember">Remember
                             me</label>
                     </div>
                     <div class="text-sm">
@@ -74,7 +76,7 @@ defineProps<{
                 </div> -->
 
                 <button type="submit" :disabled="processing"
-                    class="w-full bg-primary hover:bg-primary/90 text-white font-bold py-3.5 px-4 rounded-lg transition-colors flex items-center justify-center gap-2 mt-2 disabled:opacity-75">
+                    class="w-full bg-neutral-900 hover:bg-black dark:bg-neutral-100 dark:text-neutral-900 dark:hover:bg-white text-white font-bold py-3.5 px-4 rounded-lg transition-colors flex items-center justify-center gap-2 mt-2 disabled:opacity-75">
                     <Spinner v-if="processing" class="mr-2 h-4 w-4" />
                     <span>Log in</span>
                 </button>
@@ -82,17 +84,14 @@ defineProps<{
 
             <!-- Bottom section -->
             <div v-if="canRegister"
-                class="bg-slate-50 dark:bg-slate-800/50 p-6 text-center border-t border-slate-100 dark:border-slate-800">
-                <p class="text-slate-600 dark:text-slate-400 text-sm">
-                    Don't have an account?
-                    <Link :href="register()" class="text-primary font-bold hover:underline ml-1">Register</Link>
+                class="bg-neutral-50 dark:bg-neutral-800/50 p-6 text-center border-t border-neutral-100 dark:border-neutral-800">
+                <p class="text-neutral-600 dark:text-neutral-400 text-sm">
+                    Don’t have an account yet?
+                    <Link :href="register()"
+                        class="font-bold hover:underline ml-1 text-neutral-900 dark:text-neutral-100">Start your journal</Link>
                 </p>
             </div>
         </div>
 
-        <!-- Decorative line at bottom -->
-        <div class="fixed bottom-0 left-0 right-0 h-1 bg-primary/20">
-            <div class="h-full bg-primary w-1/3"></div>
-        </div>
     </div>
 </template>

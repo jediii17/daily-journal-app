@@ -83,7 +83,7 @@ class EntryController extends Controller
     public function update(Request $request, Entry $entry)
     {
         // If the entry does not belong to the user, abort the request
-        if ($entry->user_id !== $request->user()->id()) {
+        if ($entry->user_id !== $request->user()->id) {
             abort(403);
         }
 
@@ -138,7 +138,7 @@ class EntryController extends Controller
     public function show(Entry $entry, Request $request)
     {
         // If the entry does not belong to the user, abort the request
-        if ($entry->user_id !== $request->user()->id()) {
+        if ($entry->user_id !== $request->user()->id) {
             abort(403);
         }
 

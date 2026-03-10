@@ -27,7 +27,7 @@ class Entry extends Model
     }
 
 
-    public function ScopeFilter(Builder $query, array $filters): void
+    public function scopeFilter(Builder $query, array $filters): void
     {
         $query->when(
             $filters['search'] ?? null,
